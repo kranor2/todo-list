@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kranor2 | Todo List</title>
+    <title>kranor2 | To-Do List</title>
 </head>
 <body>
-    
+    <div class="home">
+        <div class="hero">
+            <img src="./dino-logo.png" alt="Hatching Dinosaur Logo">
+            <p>To-Do List</p>
+            <img src="./dino-logo.png" alt="Hatching Dinosaur Logo">
+        </div>
+        <div class="tasks">
+            <div class="tasks-header">
+                <p>Your Projects</p>
+                <button class="add-project">
+                    <img src="./plus-icon.svg" alt="Plus icon" />
+                </button>
+            </div>
+            <ul class="project-list"></ul>
+        </div>
+    </div>
+    <div class="project">
+        <div class="project-header">
+            <button class="back">
+                <img src="./back-arrow-icon.svg" alt="Go back arrow icon">
+            </button>
+            <div class="project-name"></div>
+        </div>
+        <div class="project-header-gutter">
+            <div class="progress-meter"></div>
+        </div>
+        <div class="project-content">
+            <div class="tasks-header">
+                <p>Tasks</p>
+                <button class="add-task">
+                    <img src="./plus-icon.svg" alt="New Action" />
+                </button>
+            </div>
+            <ul class="task-list"></ul>
+        </div>
+    </div>
 </body>
 </html>
