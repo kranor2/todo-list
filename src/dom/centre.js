@@ -21,7 +21,7 @@ function createProjectListItem(project) {
     projectName.textContent = project.name;
     listItem.appendChild(projectName);
 
-    projectOptsBtn = document.createElement("button");
+    const projectOptsBtn = document.createElement("button");
     projectOptsBtn.classList.add("project-options-btn");
     const projectOptsIcon = document.createElement("img");
     projectOptsIcon.src = optsIcon;

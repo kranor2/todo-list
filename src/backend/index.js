@@ -7,7 +7,7 @@ import { displayProjectList } from "../dom/centre"
 
 if (loadProjectlist() === false) {
     // Set-up default project for first load
-    const tutorialProject = createProject("Application Tutorial", color);
+    const tutorialProject = createProject("Application Tutorial", "#4a0e54");
     addTask(
         "Create new project",
         "Kick off your To-Do List journey by creating a new project on the home page.",

@@ -29,7 +29,7 @@ async function openProjectPage(project) {
         createTaskCard(createTask("", "", "low", new Date()), project, 0, true);
     });
 
-    const headerGutter = document.querySelector(",projects-header-gutter");
+    const headerGutter = document.querySelector(".projects-header-gutter");
     headerGutter.style.backgroundColor = `${project.color}80`;
 
     const progressMeter = document.querySelector(".progress-meter");

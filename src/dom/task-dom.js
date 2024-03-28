@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-import { saveProjectList } from "../backend/projectlist";
+import { saveProjectlist } from "../backend/projectlist";
 import { getProgressPercentage, prependTask, removeTask } from "../backend/project";
 
 import urgentIcon from "../assets/urgent-icon.svg";
@@ -249,12 +249,12 @@ function createTaskCard(task, project, index, newCard = false) {
                 break;    
         }
 
-        const savecardBtn = document.createElement("button");
-        savecardBtn.classList.add("save-card-btn");
+        const saveCardBtn = document.createElement("button");
+        saveCardBtn.classList.add("save-card-btn");
         const saveCardIcon = document.createElement("img");
         saveCardIcon.src = saveIcon;
         saveCardIcon.alt = "Save";
-        saveCardBrn.appendChild(saveCardIcon);
+        saveCardBtn.appendChild(saveCardIcon);
         taskActions.appendChild(saveCardBtn);
 
         saveCardBtn.addEventListener("click", () => {
@@ -265,7 +265,7 @@ function createTaskCard(task, project, index, newCard = false) {
 
             task.title = taskTitleInput.value;
             task.description = taskDescInput.value;
-            taskDueDate = taskDueDateInput.value ? taskDueDateInput.value : task.dueDate;
+            task.dueDate = taskDueDateInput.value ? taskDueDateInput.value : task.dueDate;
             task.priority = taskPrioritySelect.value;
             if (newCard) prependTask(task, project);
             saveProjectlist();
