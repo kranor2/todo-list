@@ -1,4 +1,4 @@
-import { createAction } from "./task"
+import { createTask } from "./task"
 
 function createProject(name, color) {
     let tasks = [];
@@ -11,7 +11,7 @@ function createProject(name, color) {
 }
 
 function addTask(title, description, priority, dueDate, project) {
-    const task = createAction(title, description, priority, dueDate);
+    const task = createTask(title, description, priority, dueDate);
     prependTask(task, project);
     return task;
 }
@@ -27,7 +27,7 @@ function removeTask(index, project) {
 function getProgressPercentage(project) {
     let complete = 0
     let taskCount = project.tasks.length;
-    project.actions.forEach((task) => {
+    project.tasks.forEach((task) => {
         if (task.completed) complete++;
     });
     return (complete / taskCount) * 100;

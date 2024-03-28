@@ -1,7 +1,9 @@
-import "./style.css";
+import "../style.css";
 
 import { projectlist, loadProjectlist, saveProjectlist } from "./projectlist";
 import { createProject, addTask } from "./project"
+
+import { displayProjectList } from "../dom/centre"
 
 if (loadProjectlist() === false) {
     // Set-up default project for first load
@@ -28,28 +30,28 @@ if (loadProjectlist() === false) {
         tutorialProject
     );
     addTask(
-        "Remove action",
+        "Remove task",
         "Don't need that task anymore? Click on the delete button to remove a task from the list.",
         "medium",
         new Date(),
         tutorialProject
     );
     addTask(
-        "Edit action details",
+        "Edit task details",
         "Click on the edit button to update the title, description, due date, and/or priority of an existing task. Don't forget to save your changes when you're finished!",
         "medium",
         new Date(),
         tutorialProject
     );
     addTask(
-        "Expand action to see details",
+        "Expand task to see details",
         "I forgot to put something funny here 🙃",
         "high",
         new Date(),
         tutorialProject
     );
     addTask(
-        "Mark action as completed",
+        "Mark task as completed",
         "Check off a task once it's done to mark it as completed. Be sure to check out how your progress meter has changed!",
         "low",
         new Date(),
@@ -58,5 +60,7 @@ if (loadProjectlist() === false) {
     projectlist.push(tutorialProject);
     saveProjectlist();
 }
+
+displayProjectList();
 
 console.log("webpack did the thing");

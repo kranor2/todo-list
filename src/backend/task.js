@@ -1,4 +1,4 @@
-function createAction(title, description, priority, dueDate) {
+function createTask(title, description, priority, dueDate) {
     let completed = false;
 
     return {
@@ -10,4 +10,4 @@ function createAction(title, description, priority, dueDate) {
     };
 }
 
-export { createAction };
+export { createTask };
