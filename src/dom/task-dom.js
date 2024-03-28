@@ -200,7 +200,7 @@ function createTaskCard(task, project, index, newCard = false) {
         taskTitleInput.classList.add("task-title-input", "task-detail");
         taskTitleInput.placeholder = "Task";
         taskTitleInput.value = task.title;
-        taskDetails.replaceChild(taskTitleInput, taskTitleValue);
+        taskInfo.replaceChild(taskTitleInput, taskTitleValue);
 
         const taskDescInput = document.createElement("input");
         taskDescInput.classList.add("task-desc-input");
