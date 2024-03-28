@@ -8,7 +8,7 @@ import xIcon from "../assets/close-icon.svg";
 function newProjectPrompt() {
     const promptContainer = document.createElement("div");
     promptContainer.classList.add("prompt-container");
-    document.body,appendChild(promptContainer);
+    document.body.appendChild(promptContainer);
 
     const prompt = document.createElement("form");
     prompt.classList.add("prompt");
@@ -36,10 +36,10 @@ function newProjectPrompt() {
     closePromptBtn.type = "button";
     closePromptBtn.classList.add("close-prompt");
     closePromptBtn.addEventListener("click", closePrompt);
-    closePromptBtn.appendChild(closePromptBtn);
+    promptHeader.appendChild(closePromptBtn);
 
     const closePromptIcon = document.createElement("img");
-    closePromptIcon = xIcon;
+    closePromptIcon.src = xIcon;
     closePromptIcon.alt = "Close Prompt";
     closePromptBtn.appendChild(closePromptIcon);
 

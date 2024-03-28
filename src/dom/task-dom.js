@@ -115,10 +115,13 @@ function createTaskCard(task, project, index, newCard = false) {
     const taskDetails = document.createElement("div");
     taskDetails.classList.add("task-detail");
 
+    const taskInfo = document.createElement("div");
+    taskInfo.classList.add("task-info");
+
     const taskTitleValue = document.createElement("p");
     taskTitleValue.classList.add("task-title");
     taskTitleValue.textContent = task.title;
-    taskDetails.appendChild(taskTitleValue);
+    taskInfo.appendChild(taskTitleValue);
 
     const taskDescription = document.createElement("div");
     taskDescription.classList.add("task-description", "task-detail");
@@ -128,7 +131,8 @@ function createTaskCard(task, project, index, newCard = false) {
     taskDescriptionValue.textContent = task.description;
     taskDescription.appendChild(taskDescriptionValue);
 
-    taskDetails.appendChild(taskDescription);
+    taskInfo.appendChild(taskDescription);
+    taskDetails.appendChild(taskInfo);
 
     const taskDueDate = document.createElement("div");
     taskDueDate.classList.add("task-due-date", "task-detail");
@@ -147,7 +151,8 @@ function createTaskCard(task, project, index, newCard = false) {
     taskDetails.appendChild(taskDueDate);
 
     const taskPriority = document.createElement("div");
-    taskPriority.classList.add("task-priority", "task-detail");
+    taskPriority.classList.add("task-priority");
+    taskPriority.classList.add("task-detail");
 
     const priorityLabel = document.createElement("label");
     priorityLabel.classList.add("task-priority-label");

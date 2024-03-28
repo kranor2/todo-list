@@ -89,6 +89,15 @@ body {
     font-family: "Rubik Bubbles", sans-serif;
     font-size: 3rem;
     color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    padding: 1rem;
+    width: 5rem;
+    height: auto;
 }
 
 .projects {
@@ -100,8 +109,17 @@ body {
     width: min(50rem, 85%);
 }
 
+.tasks {
+    width: 50vw;
+    height: 70vh;
+    background-color: var(--light-filter);
+    backdrop-filter: blur(0.25rem);
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+
 .add-project img {
-    width: 2.25rem;
+    width: 1.5rem;
     height: auto;
 }
 
@@ -147,10 +165,18 @@ body {
     font-family: "Nunito", sans-serif;
     display: flex;
     padding: 0.3rem 0;
+    cursor: pointer;
 }
 
 .project-opt img {
     margin-right: 0.7rem;
+    filter: var(--dark-img-filter);
+    cursor: pointer;
+}
+
+.project-edit-opt-btn {
+    color: var(--dark);
+    cursor: pointer;
 }
 
 .prompt-container {
@@ -161,7 +187,8 @@ body {
     z-index: 2;
     width: 100vw;
     height: 100vh;
-    background-color: var(--light-filter);
+    background-color: var(--dark-filter);
+    backdrop-filter: blur(0.25rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,11 +250,17 @@ body {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: var(--light);
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+.project-name {
+    text-align: center;
+    font-family: "Rubik Bubbles", sans-serif;
+    font-size: 3rem;
 }
 
 .go-back-btn {
@@ -235,6 +268,8 @@ body {
     top: 2rem;
     left: 2rem;
     display: flex;
+    justify-self: start;
+    align-self: center;
 }
 
 .go-back-btn img {
@@ -274,7 +309,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--light-filter);
-    backdrop-filter: blur(0.7rem);
+    backdrop-filter: blur(0.25rem);
     border-radius: 0.3rem;
 }
 
@@ -289,9 +324,9 @@ body {
     font-family: "Nunito", sans-serif;
     display: flex;
     justify-content: space-between;
+    padding: 1rem 0.3rem;
     font-weight: 600;
     border-bottom: 0.15rem solid var(--dark);
-    padding: 0 0.3rem;
 }
 
 .task-item {
@@ -302,11 +337,55 @@ body {
     align-items: center;
 }
 
+.task-info {
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
 .task-item .task-title {
     font-family: "Nunito" sans-serif;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.task-due-date {
+    margin: 0.5rem;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.task-due-date label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    padding-bottom: 0.5rem;
+}
+
+.task-due-date-value {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.task-priority {
+    margin: 0.5rem;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.task-priority-label {
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .checkbox {
@@ -331,18 +410,42 @@ body {
     margin: 1.5rem 0;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 0.75rem;
     box-shadow: none;
     border-radius: 0.7rem;
 }
 
 .task-card .task-title {
+    font-size: 1rem;
     font-weight: 600;
+    padding-bottom: 0.5rem;
+}
+
+.task-card .task-description {
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.task-card .task-status {
+    align-self: start;
+}
+
+.task-status .priority {
+    justify-self: end;
 }
 
 .task-status {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+}
+
+.task-status img {
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }
 
 img .priority {
@@ -372,7 +475,7 @@ img .priority {
     font-size: 0.9rem;
     padding-right: 0.7rem;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .task-detail label {
