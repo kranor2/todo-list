@@ -113,7 +113,7 @@ function createTaskCard(task, project, index, newCard = false) {
     taskStatus.appendChild(priorityMarker);
 
     const taskDetails = document.createElement("div");
-    taskDetails.classList.add("task-details");
+    taskDetails.classList.add("task-detail");
 
     const taskTitleValue = document.createElement("p");
     taskTitleValue.classList.add("task-title");

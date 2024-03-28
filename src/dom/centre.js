@@ -108,7 +108,7 @@ function displayProjectList() {
         projectList.appendChild(createProjectListItem(project));
     });
 
-    const projectPlusBtn = document.querySelector(".project-plus-btn");
+    const projectPlusBtn = document.querySelector(".add-project");
     projectPlusBtn.addEventListener("click", () => {
         newProjectPrompt();
     });
